@@ -3,6 +3,10 @@
 
 #include <QMainWindow>
 #include <QMediaPlayer>
+#include <QVideoWidget>
+#include <QProgressBar>
+#include <QSlider>
+#include <string>
 
 namespace Ui {
 class MainWindow;
@@ -15,24 +19,36 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+	QMediaPlayer *player_;
 
-private slots:
-    void on_openPushButton_clicked();
-    void on_listenPushButton_clicked();
-    void on_stopPushButton_clicked();
-    void on_volumeHorizontalSlider_valueChanged(int value);
-    void on_pausePushButton_clicked();
-    void on_rewindPushButton_clicked();
-    void on_positionHorizontalSlider_sliderMoved(int position);
+public slots:
 
-    void updateTimeElapsedSlider(qint64 percent);
-    void setDuration(qint64 duration);
+
+    void on_actionPlay_triggered();
+
+    void on_actionStop_triggered();
+
+    void on_actionPause_triggered();
+
+    void on_actionRewind_triggered();
+
+    void on_actionOpen_triggered();
+	void on_actionOpen_triggered(QString s);
+	
+	QMediaPlayer* getPlayer();
+
+	int getStatus();
+	int getProgress();
 
 private:
     Ui::MainWindow *ui;
-
-    QMediaPlayer *player_;
-    QString audioFilename_;
+	int status;
+    
+    QVideoWidget *vw;
+	QSlider *volumeSlider;
+    QProgressBar *bar;
+    QSlider *slider;
+    QString filename_;
 };
 
 #endif // MAINWINDOW_H

@@ -7,153 +7,28 @@
     <x>0</x>
     <y>0</y>
     <width>488</width>
-    <height>151</height>
+    <height>435</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QLineEdit" name="filePathLineEdit">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>10</y>
-      <width>401</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="openPushButton">
-    <property name="geometry">
-     <rect>
-      <x>440</x>
-      <y>5</y>
-      <width>31</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="Resources.qrc">
-      <normaloff>:/button/music</normaloff>:/button/music</iconset>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="listenPushButton">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>40</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="Resources.qrc">
-      <normaloff>:/button/start</normaloff>:/button/start</iconset>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="stopPushButton">
-    <property name="geometry">
-     <rect>
-      <x>120</x>
-      <y>40</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="Resources.qrc">
-      <normaloff>:/button/Resources/stop.png</normaloff>:/button/Resources/stop.png</iconset>
-    </property>
-   </widget>
-   <widget class="QSlider" name="volumeHorizontalSlider">
-    <property name="geometry">
-     <rect>
-      <x>370</x>
-      <y>60</y>
-      <width>101</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="maximum">
-     <number>100</number>
-    </property>
-    <property name="value">
-     <number>90</number>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>360</x>
-      <y>40</y>
-      <width>50</width>
-      <height>12</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Volume</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pausePushButton">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>40</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="Resources.qrc">
-      <normaloff>:/button/Resources/pause.png</normaloff>:/button/Resources/pause.png</iconset>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="rewindPushButton">
-    <property name="geometry">
-     <rect>
-      <x>170</x>
-      <y>40</y>
-      <width>41</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset resource="Resources.qrc">
-      <normaloff>:/button/Resources/rewind.png</normaloff>:/button/Resources/rewind.png</iconset>
-    </property>
-   </widget>
-   <widget class="QSlider" name="positionHorizontalSlider">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>100</y>
-      <width>451</width>
-      <height>19</height>
-     </rect>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="autoFillBackground">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -161,7 +36,7 @@
      <x>0</x>
      <y>0</y>
      <width>488</width>
-     <height>24</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -169,12 +44,88 @@
      <string>File</string>
     </property>
     <addaction name="actionClose"/>
+    <addaction name="actionOpen"/>
+   </widget>
+   <widget class="QMenu" name="menuVideo">
+    <property name="title">
+     <string>Video</string>
+    </property>
+    <addaction name="actionPlay"/>
+    <addaction name="actionPause"/>
+    <addaction name="actionRewind"/>
+    <addaction name="actionStop"/>
    </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuVideo"/>
   </widget>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOpen"/>
+   <addaction name="actionPlay"/>
+   <addaction name="actionPause"/>
+   <addaction name="actionStop"/>
+   <addaction name="actionRewind"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
   <action name="actionClose">
    <property name="text">
     <string>Close</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/button/music</normaloff>:/button/music</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="toolTip">
+    <string>Open a file</string>
+   </property>
+  </action>
+  <action name="actionPlay">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/button/start</normaloff>:/button/start</iconset>
+   </property>
+   <property name="text">
+    <string>Play</string>
+   </property>
+  </action>
+  <action name="actionStop">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/button/Resources/stop.png</normaloff>:/button/Resources/stop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Stop</string>
+   </property>
+  </action>
+  <action name="actionPause">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/button/Resources/pause.png</normaloff>:/button/Resources/pause.png</iconset>
+   </property>
+   <property name="text">
+    <string>Pause</string>
+   </property>
+  </action>
+  <action name="actionRewind">
+   <property name="icon">
+    <iconset resource="Resources.qrc">
+     <normaloff>:/button/Resources/rewind.png</normaloff>:/button/Resources/rewind.png</iconset>
+   </property>
+   <property name="text">
+    <string>Rewind</string>
    </property>
   </action>
  </widget>
